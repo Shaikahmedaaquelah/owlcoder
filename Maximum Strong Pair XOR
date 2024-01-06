@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int max=0;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(abs(i-j)<=min(i,j))
+            {
+                int x=arr[i]^arr[j];
+                if(x>max) max=x;
+            }
+        }
+    }
+    cout<<max<<"\n";
+}
