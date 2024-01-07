@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int countbits(int n)
+{
+    int count =0;
+    while(n)
+    {
+        count+=(n&1);
+        n>>=1;
+    }
+    return count;
+}
+
+int sumbits(int n)
+{
+    int total=0;
+    for(int i=1;i<=n;i++)
+    {
+        total=total+countbits(i);
+    }
+    return total;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        cout<<sumbits(n)<<"\n";
+    }
+}
