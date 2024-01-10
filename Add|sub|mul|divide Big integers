@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    long long a, b;
+    long long c, d, e, f;
+    long long m = 1e9 + 7;
+
+    cin >> a;
+    cin >> b;
+
+    // Calculate the sum, difference, product, and integer division modulo m
+    c = (a + b) % m;
+    d = (a - b + m) % m;  // Adding m ensures that the result is non-negative
+    e = (a * b) % m;
+    
+    // Make sure b is not 0 before performing division
+    if (b != 0) {
+        f = ((a % m) * (b % m)) % m;
+    } else {
+        cout << "Error: Division by zero." << endl;
+        return 1;  // Return an error code
+    }
+
+    // Print the results
+    cout << c << endl;
+    cout << d << endl;
+    cout << e << endl;
+    cout << f << endl;
+
+    return 0;
+}
