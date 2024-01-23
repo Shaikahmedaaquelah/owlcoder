@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int loccur(int *arr,int n,int key)
+{
+    if(n==0)
+    {
+        return -1;
+    }
+    if(arr[n-1]==key)
+    {
+        return n;
+    }
+    int small=loccur(arr,n-1,key);
+    if(small==-1) return -1;
+    else return small;
+    
+}
+int main()
+{
+    int n=6;
+    int arr[n]={1,2,3,4,3,5};
+    int key;
+    cin>>key;
+    int result=loccur(arr,n,key);
+    cout<<result<<endl;
+    
+}
